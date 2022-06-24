@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #e5e5e5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 75px;
+}
+
+/* Header */
+.header__container {
+  flex-direction: row;
+}
