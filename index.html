@@ -36,8 +36,10 @@
           </li>
         </ul>
       </nav>
-      <button class="header__button button-header">
-      </button>
+      <div class="header__button-wrapper">
+        <button class="header__button button-header">
+        </button>
+      </div>
     </div>
   </header>
 
@@ -196,26 +198,28 @@
         </ul>
         <ul class="footer__social social-footer">
           <li class="social-footer__item">
-            <a href="" class="social-footer__link"><span class="social-footer__icon"></span></a>
+            <a href="" class="social-footer__link"><span class="social-footer__icon social-footer__icon--ok"></span></a>
           </li>
           <li class="social-footer__item">
-            <a href="" class="social-footer__link"><span class="social-footer__icon"></span></a>
+            <a href="" class="social-footer__link"><span class="social-footer__icon social-footer__icon--vk"></span></a>
           </li>
         </ul>
       </div>
       <div class="footer__center">
-        <h2 class="heading footer__heading">
-          <form action="https://jsonplaceholder.typicode.com/posts" autocomplete method="post" class="footer__form form-footer">
-            <input type="text" name="name" placeholder="Фамилия, имя и отчество*" required class="form-footer__input form-footer__input--small">
-            <input type="email" name="email" placeholder="Email*" required class="form-footer__input form-footer__input--small">
-            <input type="textarea" placeholder="Сообщение" class="form-footer_input form-footer_input--big">
-            <div class="form-footer__wrapper">
-              <input type="submit" value="Отправить данные" class="button form-footer__button">
-              <input type="checkbox" name="data processing" value="data processing" id="data-processing"  form checked>
-              <label for="data-processing" class="footer-form__checkbox">Согласен на обработку данных</label>
+        <h2 class="heading footer__heading">Оставить заявку</h2>
+        <form action="https://jsonplaceholder.typicode.com/posts" autocomplete method="post" class="footer__form form-footer">
+          <input type="text" name="name" placeholder="Фамилия, имя и отчество*" required class="form-footer__input form-footer__input--small">
+          <input type="email" name="email" placeholder="Email*" required class="form-footer__input form-footer__input--small">
+          <textarea name="message" rows="4" placeholder="Сообщение" class="form-footer__input form-footer_input--big"></textarea>
+          <div class="form-footer__wrapper">
+            <input type="submit" value="Отправить данные" class="button form-footer__button">
+            <div class="footer__checkbox-wrapper">
+              <input type="checkbox" name="data processing" value="data processing" id="data-processing" class="footer__checkbox"  form checked>
+              <label for="data-processing" class="footer-form__checkbox-text">Согласен на обработку данных</label>
             </div>
-          </form>
-        </h2>
+          </div>
+        </form>
+
       </div>
       <div class="footer__right right-footer">
         <p class="right-footer__content">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании стандартных подходов.</p>
