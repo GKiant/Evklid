@@ -178,20 +178,22 @@ background-color: #E1670E;
 }
 
 /* Hero */
-.hero__container {
-  display: flex;
-  height: 620px;
-  margin-bottom: 50px;
-  background: url("./../img/hero-slider-1.jpg") no-repeat transparent;
-  background-size: cover;
-  border-radius: 32px;
-  padding: 0;
+.hero {
+  position: relative;
 }
 
-.hero__wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 5.6497% 48.1920% 55px 80px;
+.swiper {
+  max-width: 1770px;
+  height: 620px;
+  margin-bottom: 50px;
+}
+
+.hero__content-wrap {
+  position: absolute;
+  max-width: 837px;
+  top: 100px;
+  left: 155px;
+  z-index: 2;
 }
 
 .hero__heading {
@@ -215,30 +217,22 @@ background-color: #E1670E;
   min-height: 78px;
 }
 
-.hero__slider-selector {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
+.swiper-pagination-bullet:not(:last-child) {
+  margin-right: 16px !important;
 }
 
-.slider-selector__item:not(:last-child) {
-  margin-right: 20px;
+.swiper-pagination {
+  margin-bottom: 18px;
 }
 
-.slider-selector__icon {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  background-size: contain;
+.swiper-pagination-bullet {
+  min-height: 15px;
+  min-width: 15px;
+  background-color: #CACACA !important;
 }
 
-.slider-selector__icon--active {
-  background: url("./../img/hero-slider-controls-active.svg") center center no-repeat transparent;
-}
-
-.slider-selector__icon--inactive {
-  background: url("./../img/her-slider-controls-inactive.svg") center center no-repeat transparent;
+.swiper-pagination-bullet-active {
+  background-color: #FFFFFF !important;
 }
 
 /* About Us */
@@ -408,36 +402,35 @@ background-color: #E1670E;
   margin-right: 75px;
 }
 
-.item-workflow__link {
+.item-workflow__button {
   padding: 4px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   color: #000000;
   transition: 0.2s ease;
+  border: none;
+  background-color: transparent;
 }
 
-.item-workflow__link--active {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 400;
-  color: #E1670E;
-}
-
-.item-workflow__link:hover {
+.item-workflow__button:hover {
   color: #FF9900;
 }
 
-.item-workflow__link:focus {
+.item-workflow__button:focus {
   outline: none;
   border: 2px solid #FF9900;
 }
 
-.item-workflow__link:active {
+.item-workflow__button:active {
   color: #E1670E;
 }
 
 .workflow__slider {
+  display: none;
+}
+
+.workflow__slider--active {
   display: flex;
   justify-content: space-between;
 }
@@ -512,7 +505,34 @@ background-color: #E1670E;
   height: 460px;
   width: 870px;
   margin-top: 10px;
-  background: url("./../img/slider1-1920.jpg") no-repeat transparent;
+  background: url("./../img/tabslider1-1920.jpg") no-repeat transparent;
+  background-size: cover;
+}
+
+.slider-workflow__picture2 {
+  display: inline-block;
+  height: 460px;
+  width: 870px;
+  margin-top: 10px;
+  background: url("./../img/tabslider2-1920.jpg") no-repeat transparent;
+  background-size: cover;
+}
+
+.slider-workflow__picture3 {
+  display: inline-block;
+  height: 460px;
+  width: 870px;
+  margin-top: 10px;
+  background: url("./../img/tabslider3-1920.jpg") no-repeat transparent;
+  background-size: cover;
+}
+
+.slider-workflow__picture4 {
+  display: inline-block;
+  height: 460px;
+  width: 870px;
+  margin-top: 10px;
+  background: url("./../img/tabslider4-1920.jpg") no-repeat transparent;
   background-size: cover;
 }
 
@@ -883,16 +903,11 @@ background-color: #E1670E;
   }
 
   /* Hero 1024 */
-  .hero__container {
-    margin-bottom: 37px;
-    width: 100%;
-    height: 668px;
-    background: url("./../img/hero-slider-1-1024.jpg");
-    background-size: cover;
-  }
-
-  .hero__wrapper {
-    margin: 160px 77px 115px;
+  .swiper {
+    margin: 0 50px;
+    max-width: 924px;
+    max-height: 668px;
+    margin-bottom: 50px;
   }
 
   .hero__heading {
@@ -942,9 +957,36 @@ background-color: #E1670E;
   /* Workflow 1024 */
   .slider-workflow__picture {
     display: inline-block;
-    background: url("./../img/slider1-1024.jpg") no-repeat transparent;
+    background: url("./../img/tabslider1-1024.jpg") no-repeat transparent;
     width: 437px;
     height: 689px;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture2 {
+    display: inline-block;
+    width: 437px;
+    height: 689px;
+    margin-top: 10px;
+    background: url("./../img/tabslider2-1024.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture3 {
+    display: inline-block;
+    width: 437px;
+    height: 689px;
+    margin-top: 10px;
+    background: url("./../img/tabslider3-1024.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture4 {
+    display: inline-block;
+    width: 437px;
+    height: 689px;
+    margin-top: 10px;
+    background: url("./../img/tabslider4-1024.jpg") no-repeat transparent;
     background-size: cover;
   }
 
@@ -1016,17 +1058,12 @@ background-color: #E1670E;
     }
 
     /* Hero 768 */
-  .hero__container {
-    margin-bottom: 36px;
-    max-height: 662px;
-    background: url("./../img/hero-slider-1-768.jpg");
-    background-size: cover;
-    border-radius: 24px;
-  }
-
-  .hero__wrapper {
-    margin: 160px 40px 115px;
-  }
+    .swiper {
+      margin: 0 50px;
+      max-width: 668px;
+      max-height: 662px;
+      margin-bottom: 50px;
+    }
 
   .hero__heading {
     margin-bottom: 16px;
@@ -1118,10 +1155,37 @@ background-color: #E1670E;
   .slider-workflow__picture {
     display: block;
     margin-bottom: 38px;
-    background: url("./../img/slider1-768.jpg") no-repeat transparent;
+    background: url("./../img/tabslider1-768.jpg") no-repeat transparent;
     width: 668px;
     height: 284px;
     background-size: contain;
+  }
+
+  .slider-workflow__picture2 {
+    display: inline-block;
+    width: 668px;
+    height: 284px;
+    margin-top: 10px;
+    background: url("./../img/tabslider2-768.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture3 {
+    display: inline-block;
+    width: 668px;
+    height: 284px;
+    margin-top: 10px;
+    background: url("./../img/tabslider3-768.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture4 {
+    display: inline-block;
+    width: 668px;
+    height: 284px;
+    margin-top: 10px;
+    background: url("./../img/tabslider4-768.jpg") no-repeat transparent;
+    background-size: cover;
   }
 
   .slider-workflow__description {
@@ -1196,14 +1260,22 @@ background-color: #E1670E;
   }
 
    /* Hero 320 */
-  .hero__container {
-    flex: 1 1 30%;
-    margin-bottom: 60px;
+
+  .hero__content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 60px;
+    left: 37px;
+    max-width: 247px;
+  }
+
+   .swiper {
+    margin: 0 50px;
+    max-width: 500px;
     max-height: 308px;
-    max-width: 90.625%;
-    background: url("./../img/hero-slider-1-320.jpg") no-repeat transparent;
-    background-size: cover;
-    border-radius: 16px;
+    margin-bottom: 50px;
   }
 
   .hero__wrapper {
@@ -1387,7 +1459,7 @@ background-color: #E1670E;
     margin-right: 0;
   }
 
-  .item-workflow__link {
+  .item-workflow__button {
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
@@ -1402,8 +1474,35 @@ background-color: #E1670E;
     width: 290px;
     height: 160px;
     margin-bottom: 16px;
-    background: url("./../img/slider1-320.jpg") no-repeat transparent;
+    background: url("./../img/tabslider1-320.jpg") no-repeat transparent;
     background-size: contain;
+  }
+
+  .slider-workflow__picture2 {
+    display: inline-block;
+    width: 290px;
+    height: 160px;
+    margin-top: 10px;
+    background: url("./../img/tabslider2-320.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture3 {
+    display: inline-block;
+    width: 290px;
+    height: 160px;
+    margin-top: 10px;
+    background: url("./../img/tabslider3-320.jpg") no-repeat transparent;
+    background-size: cover;
+  }
+
+  .slider-workflow__picture4 {
+    display: inline-block;
+    width: 290px;
+    height: 160px;
+    margin-top: 10px;
+    background: url("./../img/tabslider4-320.jpg") no-repeat transparent;
+    background-size: cover;
   }
 
   .slider-workflow__title {

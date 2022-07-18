@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 <body class="body">
@@ -46,23 +48,24 @@
 
   <main class="main">
     <section class="hero">
-      <div class="container hero__container">
-         <div class="hero__wrapper">
-           <h1 class="hero__heading">Проектные решения любой сложности</h1>
-           <p class="hero__content">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
-           <button class="button hero__button">Заказать&nbsp;расчёт</button>
-         </div>
-         <ul class="hero__slider-selector">
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon slider-selector__icon--active"></span></a>
-          </li>
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon  slider-selector__icon--inactive"></span></a>
-          </li>
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon slider-selector__icon--inactive"></span></a>
-          </li>
-         </ul>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="./img/hero-slider-1.jpg" height="100%" alt=""></div>
+          <div class="swiper-slide"><img src="./img/hero-slider-2.jpg" height="100%" alt=""></div>
+          <div class="swiper-slide"><img src="./img/hero-slider-3.jpg" height="100%" alt=""></div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="hero__content-wrap">
+        <h1 class="hero__heading">Проектные решения любой сложности</h1>
+        <p class="hero__content">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+        <button class="button hero__button">Заказать&nbsp;расчёт</button>
       </div>
     </section>
 
@@ -105,19 +108,19 @@
         <h2 class="heading workflow__heading">Как мы работаем</h2>
         <ul class="workflow__list">
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link item-workflow__link--active">1 шаг</a>
+            <button data-path="one" class="item-workflow__button">1 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">2 шаг</a>
+            <button data-path="two" class="item-workflow__button">2 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">3 шаг</a>
+            <button data-path="three" class="item-workflow__button">3 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">4 шаг</a>
+            <button data-path="four" class="item-workflow__button">4 шаг</button>
           </li>
         </ul>
-        <div class="workflow__slider slider-workflow">
+        <div class="workflow__slider slider-workflow workflow__slider--active" data-target="one">
           <div class="slider-workflow__content content-workflow">
             <strong class="slider-workflow__title">Проводим консультацию</strong>
             <p class="slider-workflow__description">Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.</p>
@@ -127,6 +130,39 @@
             </div>
           </div>
           <span class="slider-workflow__picture"></span>
+        </div>
+        <div class="workflow__slider slider-workflow" data-target="two">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Составляем смету</strong>
+            <p class="slider-workflow__description">Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture2"></span>
+        </div>
+        <div class="workflow__slider slider-workflow" data-target="three">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Привлекаем подрядчиков</strong>
+            <p class="slider-workflow__description">Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture3"></span>
+        </div>
+        <div class="workflow__slider slider-workflow" data-target="four">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Инспектируем все этапы работ</strong>
+            <p class="slider-workflow__description">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture4"></span>
         </div>
       </div>
     </section>
@@ -212,7 +248,8 @@
       </div>
     </div>
   </footer>
-
+<script src="./js/tabs.js"></script>
+<script src="./swiper.js"></script>
 </body>
 
 </html>
