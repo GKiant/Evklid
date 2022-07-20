@@ -925,6 +925,7 @@ background-color: #E1670E;
     min-height: 23px;
     background: url("./../img/hamburger.svg") center center no-repeat transparent;
     background-size: contain;
+    cursor: pointer;
   }
 
   .burger__list {
@@ -959,6 +960,7 @@ background-color: #E1670E;
     margin-bottom: 105px;
     background: url("./../img/X.svg") center center no-repeat transparent;
     background-size: contain;
+    cursor: pointer;
   }
 
   .item-burger__link {
