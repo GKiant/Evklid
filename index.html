@@ -11,12 +11,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      active: NaN
+    });
+  } );
+  </script>
 </head>
 
 <body class="body">
   <header class="header">
     <div class="container header__container">
-      <span class="hamburger"></span>
+      <span id="burger" class="burger"></span>
+      <ul id="burger__list" class="burger__list">
+        <li class="burger__item item-burger">
+          <span id="burger__close" class="burger__close"></span>
+        </li>
+        <li class="burger__item item-burger">
+          <a href="" class="item-burger__link">О&nbsp;нас</a>
+        </li>
+        <li class="burger__item item-burger">
+          <a href="" class="item-burger__link">Проекты</a>
+        </li>
+        <li class="burger__item item-burger">
+          <a href="" class="item-burger__link">Этапы</a>
+        </li>
+        <li class="burger__item item-burger">
+          <a href="" class="item-burger__link">Отзывы</a>
+        </li>
+        <li class="burger__item item-burger">
+          <a href="" class="item-burger__link">Контакты</a>
+        </li>
+      </ul>
       <img src="./img/logo.svg" alt="Евклид, проектные системы" class="header__logo">
       <nav class="header__nav ">
         <ul class="header__list">
@@ -46,23 +82,24 @@
 
   <main class="main">
     <section class="hero">
-      <div class="container hero__container">
-         <div class="hero__wrapper">
-           <h1 class="hero__heading">Проектные решения любой сложности</h1>
-           <p class="hero__content">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
-           <button class="button hero__button">Заказать&nbsp;расчёт</button>
-         </div>
-         <ul class="hero__slider-selector">
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon slider-selector__icon--active"></span></a>
-          </li>
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon  slider-selector__icon--inactive"></span></a>
-          </li>
-          <li class="slider-selector__item">
-            <a href="" class="slider-selector__link"><span class="slider-selector__icon slider-selector__icon--inactive"></span></a>
-          </li>
-         </ul>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="./img/hero-slider-1.jpg" height="100%" alt=""></div>
+          <div class="swiper-slide"><img src="./img/hero-slider-2.jpg" height="100%" alt=""></div>
+          <div class="swiper-slide"><img src="./img/hero-slider-3.jpg" height="100%" alt=""></div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="hero__content-wrap">
+        <h1 class="hero__heading">Проектные решения любой сложности</h1>
+        <p class="hero__content">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+        <button class="button hero__button">Заказать&nbsp;расчёт</button>
       </div>
     </section>
 
@@ -105,22 +142,22 @@
         <h2 class="heading workflow__heading">Как мы работаем</h2>
         <ul class="workflow__list">
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link item-workflow__link--active">1 шаг</a>
+            <button data-path="one" class="item-workflow__button">1 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">2 шаг</a>
+            <button data-path="two" class="item-workflow__button">2 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">3 шаг</a>
+            <button data-path="three" class="item-workflow__button">3 шаг</button>
           </li>
           <li class="workflow__item item-workflow">
-            <a href="" class="item-workflow__link">4 шаг</a>
+            <button data-path="four" class="item-workflow__button">4 шаг</button>
           </li>
         </ul>
-        <div class="workflow__slider slider-workflow">
+        <div class="workflow__slider slider-workflow workflow__slider--active" data-target="one">
           <div class="slider-workflow__content content-workflow">
             <strong class="slider-workflow__title">Проводим консультацию</strong>
-            <p class="slider-workflow__description">Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.</p>
+            <p class="slider-workflow__description">Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями.<br> А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.</p>
             <div class="content-workflow__buttons">
               <button class="button content-workflow__button--orange">Подробнее</button>
               <button class="button content-workflow__button--white">Договор</button>
@@ -128,29 +165,72 @@
           </div>
           <span class="slider-workflow__picture"></span>
         </div>
+        <div class="workflow__slider slider-workflow" data-target="two">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Составляем смету</strong>
+            <p class="slider-workflow__description">Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture2"></span>
+        </div>
+        <div class="workflow__slider slider-workflow" data-target="three">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Привлекаем подрядчиков</strong>
+            <p class="slider-workflow__description">Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture3"></span>
+        </div>
+        <div class="workflow__slider slider-workflow" data-target="four">
+          <div class="slider-workflow__content content-workflow">
+            <strong class="slider-workflow__title">Инспектируем все этапы работ</strong>
+            <p class="slider-workflow__description">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.</p>
+            <div class="content-workflow__buttons">
+              <button class="button content-workflow__button--orange">Подробнее</button>
+              <button class="button content-workflow__button--white">Договор</button>
+            </div>
+          </div>
+          <span class="slider-workflow__picture slider-workflow__picture4"></span>
+        </div>
       </div>
     </section>
 
     <section class="faq">
       <div class="container faq__container">
         <h2 class="heading faq__heading">Часто задаваемые вопросы</h2>
-        <ul class="faq__list">
-          <li class="faq__item item-faq">
-              <a href="" class="item-faq__link">Из чего формируется конечная стоимость проекта?</a>
-          </li>
-          <li class="faq__item item-faq">
-              <a href="" class="item-faq__link"><span class="faq__line-break faq__line-break--1024">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</span></a>
-          </li>
-          <li class="faq__item item-faq">
-              <a href="" class="item-faq__link"><span class="faq__line-break">Я выбираю между разными компаниями. В чём ваше отличие?</span></a>
-          </li>
-          <li class="faq__item item-faq">
-             <a href="" class="item-faq__link"><span class="faq__line-break">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</span></a>
-          </li>
-          <li class="faq__item item-faq">
-              <a href="" class="item-faq__link">Могу ли я вернуть деньги на каком-либо из этапов работ?</a>
-          </li>
-        </ul>
+        <div id="accordion">
+          <h3 class="accordion__header"><a href="" class="item-faq__link">Из чего формируется конечная стоимость проекта?</a></h3>
+          <div>
+            <p>Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас 
+              к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы.
+              Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов.</p>
+            <p>Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определённых слоёв населения,
+              а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы,
+              а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете.</p>
+          </div>
+          <h3 class="accordion__header"><a href="" class="item-faq__link"><span class="faq__line-break faq__line-break--1024">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</span></a></h3>
+          <div>
+            <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+          </div>
+          <h3 class="accordion__header"><a href="" class="item-faq__link"><span class="faq__line-break">Я выбираю между разными компаниями. В чём ваше отличие?</span></a></h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+          </div>
+          <h3 class="accordion__header"><a href="" class="item-faq__link"><span class="faq__line-break">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</span></a></h3>
+          <div>
+            <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+          </div>
+          <h3 class="accordion__header"><a href="" class="item-faq__link">Могу ли я вернуть деньги на каком-либо из этапов работ?</a></h3>
+          <div>
+            <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -212,7 +292,9 @@
       </div>
     </div>
   </footer>
-
+<script src="./js/tabs.js"></script>
+<script src="./swiper.js"></script>
+<script src="./js/burger.js"></script>
 </body>
 
 </html>
