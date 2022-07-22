@@ -565,14 +565,17 @@ background-color: #E1670E;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 39px 0;
-  border-bottom: 1px solid #cacaca;
   border-top: 1px solid #cacaca;
+  padding: 39px 0;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
   color: #000000;
   transition: 0.25s ease;
+}
+
+.ui-accordion:last-child {
+  border-bottom: 1px solid #cacaca;
 }
 
 .accordion__header {
@@ -1688,6 +1691,7 @@ background-color: #E1670E;
   .faq__line-break {
     display: inline-block;
     max-width: 245px !important;
+    /* padding-right: 10px !important; */
   }
   .ui-accordion-content {
   font-weight: 400 !important;
